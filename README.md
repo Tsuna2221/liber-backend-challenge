@@ -10,7 +10,7 @@
 
 ### User Credentials
 
-POST /login
+##### POST /login
 
 | Body Params | Description                             | Data Type | Required    |
 |-------------|-----------------------------------------|-----------|-------------|
@@ -18,6 +18,7 @@ POST /login
 | password    | Your password created along with e-mail | string    | yes         |
 
 ~~~~
+POST /login
 {
     "data": {
         "id": 1,
@@ -30,7 +31,7 @@ POST /login
 }
 ~~~~
 
-POST /register
+##### POST /register
 
 | Body Params           | Description                                                  | Data Type | Required |
 |-----------------------|--------------------------------------------------------------|-----------|----------|
@@ -40,6 +41,7 @@ POST /register
 | password_confirmation | Password confirmation string. Must be the same as "password" | string    | yes      |
 
 ~~~~
+POST /register
 {
     "data": {
         "id": 2,
@@ -54,13 +56,13 @@ POST /register
 
 ### Event Handling
 
-All the events endpoints require an Bearer Token, which you can get by logging or creating a new user at /login or /register respectively
+All the events endpoints require an Bearer Token, which you can get by [logging or creating a new user at /login or /register](#user-credentials) respectively
 
 | Header Fields | Description                                       | Data Type | Required |
 |---------------|---------------------------------------------------|-----------|----------|
 | Authorization | A valid access token (e.g. Bearer <access_token>) | number    | yes      |
 
-POST /event
+##### POST /event
 
 | Body Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
@@ -81,7 +83,7 @@ POST /event
 }
 ~~~~
 
-POST /event/copy/{id}
+##### POST /event/copy/{id}
 
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
@@ -104,7 +106,7 @@ POST /event/copy/13
 }
 ~~~~
 
-GET /event/{id}
+##### GET /event/{id}
 
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
@@ -157,7 +159,7 @@ GET /event
 ]
 ~~~~
 
-PUT /event/{id}
+##### PUT /event/{id}
 
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
@@ -181,7 +183,7 @@ PUT /event/1
     "id": 1
 }
 ~~~~
-DELETE /event/{id}
+##### DELETE /event/{id}
   
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
