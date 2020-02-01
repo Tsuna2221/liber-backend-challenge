@@ -1,12 +1,12 @@
 ## API Endpoints
 
-- POST /login
-- POST /register
-- POST /event
-- POST /event/copy/{id}
-- GET /event/{id?}
-- PUT /event/{id}
-- DELETE /event/{id}
+- [POST /login](#post-login)
+- [POST /register](#post-register)
+- [POST /event](#post-event)
+- [POST /event/copy/{id}](#post-eventcopyid)
+- [GET /event/{id?}](#get-eventid)
+- [PUT /event/{id}](#put-eventid)
+- [DELETE /event/{id}](#delete-eventid)
 
 ### User Credentials
 
