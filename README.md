@@ -11,6 +11,7 @@
 ### User Credentials
 
 POST /login
+
 | Body Params | Description                             | Data Type | Required    |
 |-------------|-----------------------------------------|-----------|-------------|
 | email       | Your unique registered e-mail           | string    | yes         |
@@ -30,6 +31,7 @@ POST /login
 ~~~~
 
 POST /register
+
 | Body Params           | Description                                                  | Data Type | Required |
 |-----------------------|--------------------------------------------------------------|-----------|----------|
 | name                  | Your display name                                            | string    | yes      |
@@ -59,6 +61,7 @@ All the events endpoints require an Bearer Token, which you can get by logging o
 | Authorization | A valid access token (e.g. Bearer <access_token>) | number    | yes      |
 
 POST /event
+
 | Body Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
 | title       | The event title                                     | string    | yes      |
