@@ -18,14 +18,14 @@ POST /login
 
 ~~~~
 {
-	"data": {
-		"id": 1,
-		"name": "Example Name",
-		"email": "example@test.com",
-		"created_at": "2020-02-01 20:51:54",
-		"updated_at": "2020-02-01 20:51:54"
-	},
-	"access_token": "<access_token>"
+    "data": {
+        "id": 1,
+        "name": "Example Name",
+        "email": "example@test.com",
+        "created_at": "2020-02-01 20:51:54",
+        "updated_at": "2020-02-01 20:51:54"
+    },
+    "access_token": "<access_token>"
 }
 ~~~~
 
@@ -39,14 +39,14 @@ POST /register
 
 ~~~~
 {
-	"data": {
-		"id": 2,
-		"name": "Newly Created User",
-		"email": "registerExample@test.com",
-		"created_at": "2020-02-01 20:51:54",
-		"updated_at": "2020-02-01 20:51:54"
-	},
-	"access_token": "<access_token>"
+    "data": {
+        "id": 2,
+        "name": "Newly Created User",
+        "email": "registerExample@test.com",
+        "created_at": "2020-02-01 20:51:54",
+        "updated_at": "2020-02-01 20:51:54"
+    },
+    "access_token": "<access_token>"
 }
 ~~~~
 
@@ -68,13 +68,13 @@ POST /event
 ~~~~
 POST /event
 {
-	"title": "Example Title",
-	"description": "Example Description",
-	"date": "2020-02-01",
-	"user_id": 1,
-	"updated_at": "2020-02-01 21:55:27",
-	"created_at": "2020-02-01 21:55:27",
-	"id": 12
+    "title": "Example Title",
+    "description": "Example Description",
+    "date": "2020-02-01",
+    "user_id": 1,
+    "updated_at": "2020-02-01 21:55:27",
+    "created_at": "2020-02-01 21:55:27",
+    "id": 12
 }
 ~~~~
 
@@ -91,13 +91,13 @@ POST /event/copy/{id}
 ~~~~
 POST /event/copy/13
 {
-	"title": "Copy Example Title",
-	"description": "Copy Example Description",
-	"date": "2025-04-24",
-	"user_id": 1,
-	"updated_at": "2020-02-01 21:55:27",
-	"created_at": "2020-02-01 21:55:27",
-	"id": 13
+    "title": "Copy Example Title",
+    "description": "Copy Example Description",
+    "date": "2025-04-24",
+    "user_id": 1,
+    "updated_at": "2020-02-01 21:55:27",
+    "created_at": "2020-02-01 21:55:27",
+    "id": 13
 }
 ~~~~
 
@@ -110,13 +110,13 @@ GET /event/{id}
 ~~~~
 GET /event/1
 {
-	"title": "First Title",
-	"description": "First Description",
-	"date": "2020-01-14",
-	"user_id": 1,
-	"updated_at": "2020-02-01 20:35:42",
-	"created_at": "2020-02-01 20:35:24",
-	"id": 1
+    "title": "First Title",
+    "description": "First Description",
+    "date": "2020-01-14",
+    "user_id": 1,
+    "updated_at": "2020-02-01 20:35:42",
+    "created_at": "2020-02-01 20:35:24",
+    "id": 1
 }
 ~~~~
 
