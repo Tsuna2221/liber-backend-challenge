@@ -60,7 +60,7 @@ All the events endpoints require an Bearer Token, which you can get by [logging 
 
 | Header Fields | Description                                       | Data Type | Required |
 |---------------|---------------------------------------------------|-----------|----------|
-| Authorization | A valid access token (e.g. Bearer <access_token>) | number    | yes      |
+| Authorization | A valid access token (e.g. Bearer <access_token>) | string    | yes      |
 
 #### POST /event
 
