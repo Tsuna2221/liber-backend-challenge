@@ -13,8 +13,8 @@
 POST /login
 | Body Params | Description                             | Data Type | Required    |
 |-------------|-----------------------------------------|-----------|-------------|
-| email       | Your unique registered e-mail           | string    | yes        |
-| password    | Your password created along with e-mail | string    | yes        |
+| email       | Your unique registered e-mail           | string    | yes         |
+| password    | Your password created along with e-mail | string    | yes         |
 
 ~~~~
 {
@@ -32,10 +32,10 @@ POST /login
 POST /register
 | Body Params           | Description                                                  | Data Type | Required |
 |-----------------------|--------------------------------------------------------------|-----------|----------|
-| name                  | Your display name                                            | string    | yes     |
-| email                 | A unique e-mail                                              | string    | yes     |
-| password              | A password with mininum 6 characters                         | string    | yes     |
-| password_confirmation | Password confirmation string. Must be the same as "password" | string    | yes     |
+| name                  | Your display name                                            | string    | yes      |
+| email                 | A unique e-mail                                              | string    | yes      |
+| password              | A password with mininum 6 characters                         | string    | yes      |
+| password_confirmation | Password confirmation string. Must be the same as "password" | string    | yes      |
 
 ~~~~
 {
@@ -61,9 +61,9 @@ All the events endpoints require an Bearer Token, which you can get by logging o
 POST /event
 | Body Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| title       | The event title                                     | string    | yes     |
-| description | A simple description about the event (maximum: 100) | string    | no      |
-| date        | The event date (format: YYYY-MM-DD)                 | string    | yes     |
+| title       | The event title                                     | string    | yes      |
+| description | A simple description about the event (maximum: 100) | string    | no       |
+| date        | The event date (format: YYYY-MM-DD)                 | string    | yes      |
 
 ~~~~
 POST /event
@@ -82,11 +82,11 @@ POST /event/copy/{id}
 
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| id          | id from the original event that will be copied                               | number    | yes    |
+| id          | id from the original event that will be copied      | number    | yes      |
 
 | Body Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| date        | The new event date (format: YYYY-MM-DD)                 | string    | yes     |
+| date        | The new event date (format: YYYY-MM-DD)             | string    | yes      |
 
 ~~~~
 POST /event/copy/13
@@ -105,7 +105,7 @@ GET /event/{id}
 
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| id          | id from the original event that will be copied                               | number    | no    |
+| id          | id from the original event that will be copied      | number    | no       |
 
 ~~~~
 GET /event/1
@@ -156,17 +156,17 @@ GET /event
 
 PUT /event/{id}
 
-| Path Params | Description | Data Type | Required |
+| Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| id | id from the event that will be updated | number | yes |
+| id          | id from the event that will be updated              | number    | yes      |
   
-| Body Params | Description | Data Type | Required |
+| Body Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| title | Updated event title | string | no |
-| description | Updated optional description | string | no |
-| date | Updated event date (format: YYYY-MM-DD) | string | no |
+| title       | Updated event title                                 | string    | no       |
+| description | Updated optional description                        | string    | no       |
+| date        | Updated event date (format: YYYY-MM-DD)             | string    | no       |
   
-  ~~~~
+~~~~
 PUT /event/1
 {
 	"title": "Updated Title",
@@ -180,19 +180,19 @@ PUT /event/1
 ~~~~
 DELETE /event/{id}
   
-| Path Params | Description | Data Type | Required |
+| Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
-| id | id from the event that will be deleted | number | yes |
+| id          | id from the event that will be deleted              | number    | yes      |
 
 ~~~~
 DELETE /event/13
 {
-	"title": "Copy Example Title",
-	"description": "Copy Example Description",
-	"date": "2025-04-24",
-	"user_id": 1,
-	"updated_at": "2020-02-01 21:55:27",
-	"created_at": "2020-02-01 21:55:27",
-	"id": 13
+    "title": "Copy Example Title",
+    "description": "Copy Example Description",
+    "date": "2025-04-24",
+    "user_id": 1,
+    "updated_at": "2020-02-01 21:55:27",
+    "created_at": "2020-02-01 21:55:27",
+    "id": 13
 }
 ~~~~
