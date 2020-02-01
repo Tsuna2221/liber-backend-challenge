@@ -1,12 +1,18 @@
+# Back-end Challenge
+
+A simple Laravel Web and REST API using Passport as OAuth2 authentication.
+
+Web API can be accessed by the root path.
+
 ## API Endpoints
 
-- [POST /login](#post-login)
-- [POST /register](#post-register)
-- [POST /event](#post-event)
-- [POST /event/copy/{id}](#post-eventcopyid)
-- [GET /event/{id?}](#get-eventid)
-- [PUT /event/{id}](#put-eventid)
-- [DELETE /event/{id}](#delete-eventid)
+- [POST /api/login](#post-login)
+- [POST /api/register](#post-register)
+- [POST /api/event](#post-event)
+- [POST /api/event/copy/{id}](#post-eventcopyid)
+- [GET /api/event/{id?}](#get-eventid)
+- [PUT /api/event/{id}](#put-eventid)
+- [DELETE /api/event/{id}](#delete-eventid)
 
 ### User Credentials
 
@@ -106,7 +112,7 @@ POST /event/copy/13
 }
 ~~~~
 
-#### GET /event/{id}
+#### GET /event/{id?}
 
 | Path Params | Description                                         | Data Type | Required |
 |-------------|-----------------------------------------------------|-----------|----------|
