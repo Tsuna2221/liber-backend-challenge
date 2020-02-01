@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Event;
 
 class EventController extends Controller
 {
@@ -69,7 +70,7 @@ class EventController extends Controller
         $newEvent = Event::create([
             "title"       => $oldEvent->title,
             "description" => $oldEvent->description,
-            "date"        => $validatedData->date,
+            "date"        => $request->date,
             "user_id"     => auth()->user()->id
         ]);
 

@@ -19,7 +19,7 @@
         <ul class="list-group mar-t-30">
             @foreach ($events as $event)
                 <li class="list-group-item d-flex a-between a-vertical">
-                    <span>{{$event->id}} - <strong>{{$event->title}}</strong> - {{$event->description}}</span>
+                    <span>{{$event->id}} - <strong class="mar-r-12">{{$event->title}}</strong>{{$event->description}}</span>
 
                     <div class="d-flex a-vertical">
                         <strong>{{str_replace("-", "/", date('d-m-Y', strtotime($event->date)))}}</strong>

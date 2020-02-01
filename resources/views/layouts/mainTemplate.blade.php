@@ -18,7 +18,7 @@
                 <ul class="navbar-nav mr-auto">
                     @if (Auth::check())
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}">{{ Auth::user()->name }}</a>
+                            <span class="nav-link">{{ Auth::user()->name }}</span>
                         </li>
 
                         <li class="nav-item">
@@ -38,15 +38,10 @@
             </div>
             </nav>
             <div class="content">
-                
-                @if (Auth::check())
-                    @include("..modals.new_event")
-                    @include("..modals.copy_event")
+                @include("..modals.new_event")
+                @include("..modals.copy_event")
 
-                    @yield('loggedContent')
-                @else
-                    @yield('logoutContent')
-                @endif
+                @yield('loggedContent')
             </div>
         </div>
     </body>

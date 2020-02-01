@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container-sm">
-    <h3>Register</h3>
-    <form action="api/register" method="POST">
+    <h3 class="mar-v-20">Registrar</h3>
+    <form action="/register" method="POST">
         @csrf
         <div class="form-group">
             <label for="exampleInputEmail1">Nome</label>

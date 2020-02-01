@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-sm">
-    <h3>Login</h3>
+    <h3 class="mar-v-20">Login</h3>
     <form action="/login" method="POST">
         @csrf
         <div class="form-group">
@@ -14,6 +14,9 @@
             <input name="password" type="password" class="form-control" id="exampleInputPassword1">
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
+        <a href="/register">
+            <input class="btn btn-primary" type="button" value="Criar Conta">
+        </a>
     </form>
     @if ($errors->any())
         <div class="alert alert-danger">
