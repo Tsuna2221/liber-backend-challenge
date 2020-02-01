@@ -1,11 +1,10 @@
-post http://127.0.0.1:8000/api/register
+GET http://127.0.0.1:8000/api/event
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOGJiMDgxMThmNzUzNjdiYjU5NTdkZGUzZjM4ZGQ5NDgxYWJmZDEwZTg5MmM1NmI1OTA3Y2JhZGUyYzYxYmMyMzI3MGNiODViNmY1MDFiNTYiLCJpYXQiOjE1ODA1ODc5NDUsIm5iZiI6MTU4MDU4Nzk0NSwiZXhwIjoxNjEyMjEwMzQ1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ZUDRUbY6Da7G8Z5tutwbApalUH8mIpwj0xHdMAI9a1YNK4YHgTH1sOf60gI5ryKQmoeklunYZBYH5_6Xbe-3zWpcLIhDX_1rghEXB1_bVVEncbte5AOyTzVETHYWKAUtT0eY9QfYwFM6QEoF9TPqKV-BcSEtalGmZ8Z6So2FjmaLzvt5tvF1xi_pMLA0ZOHDHVdZ0lsCO-AyqDpJXEb12Sx_BgD2UmgBciJ5RqsV677Ducfjno4Nma0-pKx8BL16j98ctzk2UABYcVpSgxYiYFKrAOEg0hGaA7skBCMKJq-1JEJn3fKK9nX1lPQvKPQO90mTZkfdwwoCDtChD8pL9O2JCMP7vFpWaWtIwJjh5rkfDypA2ka9zmkE1FAvbITy_uD_RY9d6h4SOXXtjmoECleAdkeeqlvWvT3czv5lwDkQrNwG7gWj451wWyxbh--if-c28kMHCZvFXdNchDUhU22hKq-EF9D2oFkzooObI4TxW8vfl7sCxyIJgMn1pP2a5Oei7OScpzNAW1P3Z1A3fpSJI05x81do9R4hZp4iipsznX1o_jNNZv_iS6rKPvkyZE92AvTPmPZTtFA2A3jnVkPAaIopFYYzbNdGr3P7cDmLE5W-8wcDdXCbyCdZ-2MHxvnEAin-aZwXCREubpPpViPnBiwiZYes5cbo4lf5g2c
 
 {
-    "name": "new api",
-    "email": "api@test.com",
-    "password": "1234",
-    "password_confirmation": "1234"
+    "title": "Example Copy",
+    "description": "Example Description",
+    "date": "2020-02-01"
 }

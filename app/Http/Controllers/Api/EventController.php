@@ -13,7 +13,7 @@ class EventController extends Controller
     public function create(Request $request){
         $validator = Validator::make($request->all(), [ //Validate request data
             "title"       => "required",
-            "description" => "required|max:100",
+            "description" => "max:100",
             "date"        => "required"
         ]);
         

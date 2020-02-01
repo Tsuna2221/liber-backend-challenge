@@ -11,7 +11,7 @@ class EventController extends Controller
     public function create(Request $request){
         $validatedData = $request->validate([
             "title"       => "required",
-            "description" => "required|max:100",
+            "description" => "max:100",
             "date"        => "required"
         ]);
 
@@ -27,7 +27,7 @@ class EventController extends Controller
 
         $validatedData = $request->validate([
             "title"       => "required",
-            "description" => "required|max:100",
+            "description" => "max:100",
             "date"        => "required"
         ]);
 
