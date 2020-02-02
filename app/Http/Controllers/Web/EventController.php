@@ -4,17 +4,13 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Event;
 
 class EventController extends Controller
 {
-    public function create(Request $request){
-        $validatedData = $request->validate([
-            "title"       => "required",
-            "description" => "max:100",
-            "date"        => "required"
-        ]);
-
+    public function create(Requests\EventCreateRequest $request){
+        $validatedData = $request->validated();
         $validatedData["user_id"] = auth()->user()->id;
 
         $newEvent = Event::create($validatedData);
@@ -22,14 +18,8 @@ class EventController extends Controller
         return back();
     }
 
-    public function update(Request $request){
+    public function update(Requests\EventWEBUpdateRequest $request){
         $eventId = $request["id"];
-
-        $validatedData = $request->validate([
-            "title"       => "required",
-            "description" => "max:100",
-            "date"        => "required"
-        ]);
 
         $event = Event::where([
             ["id", $eventId],
@@ -55,12 +45,8 @@ class EventController extends Controller
         return back();
     }
     
-    public function copyTo(Request $request){
+    public function copyTo(Requests\EventCopyRequest $request){
         $eventId = $request["id"];
-        
-        $validatedData = $request->validate([
-            "date" => "required"
-        ]);
 
         $oldEvent = Event::where([
             ["id", $eventId],
@@ -70,7 +56,7 @@ class EventController extends Controller
         $newEvent = Event::create([
             "title"       => $oldEvent->title,
             "description" => $oldEvent->description,
-            "date"        => $request->date,
+            "date"        => $request->validated()["date"],
             "user_id"     => auth()->user()->id
         ]);
 

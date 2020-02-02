@@ -6,25 +6,13 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Event;
 
 class EventController extends Controller
 {
-    public function create(Request $request){
-        $validator = Validator::make($request->all(), [ //Validate request data
-            "title"       => "required",
-            "description" => "max:100",
-            "date"        => "required"
-        ]);
-        
-        if($validator->fails()){ //Check if requets is valid, if is not, return an error message
-            return response([
-                "message" => "Validation Error",
-                "errors"  => $validator->errors()
-            ]);
-        }
-
-        $validatedEvent            = $validator->valid();
+    public function create(Requests\EventCreateRequest $request){
+        $validatedEvent            = $request->validated();
         $validatedEvent["user_id"] = auth()->user()->id; //Set user_id
 
         $newEvent = Event::create($validatedEvent); //Create new event
@@ -51,24 +39,13 @@ class EventController extends Controller
         return response($events);
     }
 
-    public function update(Request $request){
+    public function update(Requests\EventAPIUpdateRequest $request){
         $eventId = $request["id"];
         
         $event = Event::where([
             ["id", $eventId],
             ["user_id", auth()->user()->id]
         ])->first();
-
-        $validator = Validator::make($request->all(), [
-            "description" => "max:100",
-        ]);
-
-        if($validator->fails()){
-            return response([
-                "message" => "Validation Error",
-                "errors"  => $validator->errors()
-            ], 400);
-        }
 
         if(!$event){
             return response(["message" => "Event not found"], 422);
@@ -98,24 +75,13 @@ class EventController extends Controller
         return response($event);
     }
 
-    public function copyTo(Request $request){
+    public function copyTo(Requests\EventCopyRequest $request){
         $eventId = $request["id"];
 
         $oldEvent = Event::where([
             ["id", $eventId],
             ["user_id", auth()->user()->id]
         ])->first();
-        
-        $validator = Validator::make($request->all(), [
-            "date" => "required"
-        ]);
-
-        if($validator->fails()){
-            return response([
-                "message" => "Validation Error",
-                "errors"  => $validator->errors()
-            ], 400);
-        }
 
         if(!$oldEvent){
             return response(["message" => "Event not found"], 422);
@@ -124,7 +90,7 @@ class EventController extends Controller
         $newEvent = Event::create([
             "title"       => $oldEvent->title,
             "description" => $oldEvent->description,
-            "date"        => $validator->valid()["date"],
+            "date"        => $request->validated()["date"],
             "user_id"     => auth()->user()->id
         ]);
 
