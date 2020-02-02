@@ -11,7 +11,7 @@ Web API can be accessed by the root path.
 * In the newly created .env, insert your database credentials accordingly.
 * Generate your OAuth keys running "php artisan passport:install".
 * Migrate all tables running "php artisan migrate".
-* You're ready to go. Run "php artisan migrate".
+* You're ready to go. Run "php artisan serve".
 
 ## API Endpoints
 
