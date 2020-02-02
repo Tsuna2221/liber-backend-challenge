@@ -4,6 +4,14 @@ A simple Laravel Web and REST API using Passport as OAuth2 authentication.
 
 Web API can be accessed by the root path.
 
+## Installation
+* Using git, clone the repository.
+* With a command line, go to the root folder and run both "composer install" and "npm install". 
+* Create a new .env file from the .env.example or run "copy .env.example .env" in the command line.
+* In the newly created .env, insert your database credentials accordingly.
+* Migrate all tables running "php artisan migrate".
+* You're ready to go. Run "php artisan migrate".
+
 ## API Endpoints
 
 - [POST /api/login](#post-login)
