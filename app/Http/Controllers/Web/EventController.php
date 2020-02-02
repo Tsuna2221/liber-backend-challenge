@@ -18,7 +18,7 @@ class EventController extends Controller
         return back();
     }
 
-    public function update(Requests\EventWEBUpdateRequest $request){
+    public function update(Requests\EventCreateRequest $request){
         $eventId = $request["id"];
 
         $event = Event::where([
