@@ -9,7 +9,7 @@ Web API can be accessed by the root path.
 * With a command line, go to the root folder and run both "composer install" and "npm install". 
 * Create a new .env file from the .env.example or run "copy .env.example .env" in the command line.
 * In the newly created .env, insert your database credentials accordingly.
-* Generate your OAuth keys running "php artisan passport:install".
+* Generate your App and OAuth keys running "php artisan key:generate" and then "php artisan passport:install".
 * Migrate all tables running "php artisan migrate".
 * You're ready to go. Run "php artisan serve".
 
